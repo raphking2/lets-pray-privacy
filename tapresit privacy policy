@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — TapResit</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:        #0f1117;
+      --ink-soft:   #4a5168;
+      --accent:     #1a56e8;
+      --accent-dim: #e8effe;
+      --border:     #e2e6f0;
+      --bg:         #f8f9fd;
+      --surface:    #ffffff;
+      --chip-bg:    #eef1f9;
+      --green:      #0d7a4e;
+      --green-bg:   #e6f7ef;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    /* ── Sticky topbar ── */
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 11px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .topbar-brand {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 600; font-size: 14px; color: var(--ink); text-decoration: none;
+    }
+    .logo-icon {
+      width: 32px; height: 32px; background: var(--accent);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 17px; height: 17px; color: #fff; }
+    .topbar-pill {
+      font-size: 11.5px; font-weight: 500; color: var(--ink-soft);
+      background: var(--chip-bg); border-radius: 100px; padding: 4px 13px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 24px 48px;
+    }
+    .hero-inner { max-width: 740px; margin: 0 auto; }
+    .hero-label {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--accent-dim); color: var(--accent);
+      font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 100px; margin-bottom: 22px;
+    }
+    .hero-label svg { width: 12px; height: 12px; }
+    h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(30px, 6vw, 44px);
+      line-height: 1.15; color: var(--ink); margin-bottom: 18px;
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 18px;
+      font-size: 13px; color: var(--ink-soft); margin-top: 6px;
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 6px; }
+    .hero-meta svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+    /* ── Page layout ── */
+    .page-body { max-width: 740px; margin: 0 auto; padding: 0 24px 80px; }
+
+    /* ── TOC ── */
+    .toc {
+      margin: 36px 0 0;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 26px 30px;
+    }
+    .toc-label {
+      font-size: 10.5px; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--ink-soft); margin-bottom: 16px;
+    }
+    .toc ol {
+      padding-left: 20px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5px 28px;
+    }
+    @media (max-width: 540px) { .toc ol { grid-template-columns: 1fr; } }
+    .toc li { font-size: 13.5px; }
+    .toc a { color: var(--accent); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    /* ── Sections ── */
+    section { padding-top: 56px; }
+    h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 23px; color: var(--ink);
+      margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border);
+    }
+    h3 { font-size: 14.5px; font-weight: 600; color: var(--ink); margin: 24px 0 8px; }
+    p { color: var(--ink-soft); margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+    p strong { color: var(--ink); }
+    ul, ol { padding-left: 22px; color: var(--ink-soft); margin-bottom: 14px; }
+    li { margin-bottom: 7px; }
+    li strong { color: var(--ink); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      font-size: 12.5px; background: var(--chip-bg); border: 1px solid var(--border);
+      border-radius: 4px; padding: 1px 6px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    /* ── Callout boxes ── */
+    .callout {
+      border-radius: 10px; padding: 16px 20px;
+      margin: 18px 0; font-size: 14px; line-height: 1.65;
+    }
+    .callout-blue  { background: var(--accent-dim); border-left: 3px solid var(--accent); color: #1a3880; }
+    .callout-blue strong { color: #0d2260; }
+    .callout-green { background: var(--green-bg); border-left: 3px solid var(--green); color: #085235; }
+    .callout-green strong { color: #054028; }
+    .callout-gray  { background: var(--chip-bg); border-left: 3px solid #c0c9df; color: var(--ink-soft); }
+
+    /* ── Chips ── */
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+    .chip {
+      background: var(--chip-bg); border: 1px solid var(--border);
+      border-radius: 7px; padding: 5px 13px;
+      font-size: 12.5px; font-weight: 500; color: var(--ink-soft);
+    }
+    .chip.no { color: #b00020; background: #fff0f3; border-color: #f5c0cb; }
+
+    /* ── Tables ── */
+    .table-wrap {
+      overflow-x: auto; margin: 16px 0;
+      border-radius: 10px; border: 1px solid var(--border);
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    thead tr { background: var(--chip-bg); }
+    th {
+      text-align: left; padding: 11px 16px;
+      font-size: 11.5px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase;
+      color: var(--ink-soft); border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 11px 16px; vertical-align: top;
+      color: var(--ink-soft); border-bottom: 1px solid var(--border);
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:nth-child(even) td { background: #fafbfe; }
+    td strong { color: var(--ink); }
+
+    /* ── Plan badges ── */
+    .plan {
+      display: inline-block; border-radius: 5px;
+      padding: 2px 9px; font-size: 11px; font-weight: 600; letter-spacing: .04em;
+    }
+    .plan-free     { background: #f0f0f0; color: #555; }
+    .plan-basic    { background: #e8f4fd; color: #0a6aab; }
+    .plan-pro      { background: #ede8fd; color: #5b22c9; }
+    .plan-business { background: #fdf3e8; color: #b05a00; }
+
+    /* ── Contact card ── */
+    .contact-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden; margin-top: 20px;
+    }
+    .contact-row {
+      display: grid; grid-template-columns: 145px 1fr;
+      padding: 14px 22px; border-bottom: 1px solid var(--border);
+      align-items: center; gap: 12px;
+    }
+    .contact-row:last-child { border-bottom: none; }
+    .contact-key {
+      font-size: 11px; font-weight: 600; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--ink-soft);
+    }
+    .contact-val { font-size: 14px; color: var(--ink); font-weight: 500; }
+    @media (max-width: 480px) {
+      .contact-row { grid-template-columns: 1fr; gap: 3px; padding: 12px 18px; }
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--surface); border-top: 1px solid var(--border);
+      text-align: center; padding: 36px 24px;
+    }
+    .footer-brand {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-weight: 600; font-size: 14px; color: var(--ink); margin-bottom: 12px;
+    }
+    .footer-brand .logo-icon { width: 28px; height: 28px; border-radius: 7px; }
+    .footer-brand .logo-icon svg { width: 15px; height: 15px; }
+    footer p { font-size: 12.5px; color: var(--ink-soft); margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+<!-- ── Sticky top nav ── -->
+<nav class="topbar">
+  <a class="topbar-brand" href="#">
+    <div class="logo-icon">
+      <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="1.5" width="12" height="17" rx="2" stroke="currentColor" stroke-width="1.7"/>
+        <line x1="6.5" y1="6.5" x2="11.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="6.5" y1="10"  x2="13"   y2="10"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="6.5" y1="13.5" x2="10"  y2="13.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </div>
+    TapResit
+  </a>
+  <span class="topbar-pill">Privacy Policy</span>
+</nav>
+
+<!-- ── Hero ── -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">
+      <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 1.5L8.8 5.3L13 6L9.5 9.4L10.3 13.5L7 11.6L3.7 13.5L4.5 9.4L1 6L5.2 5.3Z"
+              stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+      </svg>
+      Legal · RCE Labs Limited
+    </div>
+    <h1>Privacy Policy<br>for TapResit</h1>
+    <div class="hero-meta">
+      <span>
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1.5" y="3" width="13" height="11.5" rx="1.5" stroke="currentColor" stroke-width="1.4"/>
+          <line x1="1.5" y1="7" x2="14.5" y2="7" stroke="currentColor" stroke-width="1.4"/>
+          <line x1="5"   y1="1.5" x2="5"   y2="4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="11"  y1="1.5" x2="11"  y2="4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        Last updated: April 17, 2026
+      </span>
+      <span>
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M8 4.5V8.5L10.5 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        Effective upon installation or use of the App
+      </span>
+    </div>
+  </div>
+</header>
+
+<!-- ── Body ── -->
+<div class="page-body">
+
+  <!-- TOC -->
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-label">Table of Contents</div>
+    <ol>
+      <li><a href="#s1">Overview &amp; Definitions</a></li>
+      <li><a href="#s2">Information We Collect</a></li>
+      <li><a href="#s3">How We Use Your Information</a></li>
+      <li><a href="#s4">Payments &amp; Paystack</a></li>
+      <li><a href="#s5">Subscription Plans</a></li>
+      <li><a href="#s6">PDF Generation &amp; Sharing</a></li>
+      <li><a href="#s7">Offline Storage &amp; Caching</a></li>
+      <li><a href="#s8">Third-Party Services</a></li>
+      <li><a href="#s9">Data Sharing &amp; Disclosure</a></li>
+      <li><a href="#s10">Data Retention</a></li>
+      <li><a href="#s11">Your Rights</a></li>
+      <li><a href="#s12">Security</a></li>
+      <li><a href="#s13">Children's Privacy</a></li>
+      <li><a href="#s14">International Transfers</a></li>
+      <li><a href="#s15">Account &amp; Data Deletion</a></li>
+      <li><a href="#s16">Changes to This Policy</a></li>
+      <li><a href="#s17">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <!-- Intro -->
+  <section>
+    <div class="callout callout-blue" style="margin-top:32px">
+      This Privacy Policy explains how <strong>TapResit</strong> (the "App"), operated by <strong>RCE Labs Limited</strong> ("Company", "We", "Us", or "Our"), collects, uses, stores, and protects your information when you install or use the App. By installing or using TapResit you agree to the practices described here. If you do not agree, please uninstall the App and stop using the Service.
+    </div>
+  </section>
+
+  <!-- 1 -->
+  <section id="s1">
+    <h2>1. Overview &amp; Definitions</h2>
+    <p>TapResit is an Android mobile application that enables individuals and businesses to create professional invoices, quotes, and receipts in seconds; apply Nigerian VAT (7.5%) and Withholding Tax (WHT) logic; generate branded PDFs; and share documents via WhatsApp and other channels. The App operates on a subscription basis — <strong>we display no third-party advertisements</strong>.</p>
+    <h3>Key Terms</h3>
+    <ul>
+      <li><strong>App / Application</strong> — TapResit, the Android software provided by RCE Labs Limited.</li>
+      <li><strong>Account</strong> — a unique user account (email/password or Google) used to access the Service.</li>
+      <li><strong>Business Profile</strong> — business name, logo, address, and tax details you enter to appear on generated documents.</li>
+      <li><strong>Document</strong> — any invoice, quote, or receipt created within the App.</li>
+      <li><strong>Personal Data</strong> — any information that identifies or could reasonably identify you or your business.</li>
+      <li><strong>Usage Data</strong> — information collected automatically about how you interact with the App.</li>
+      <li><strong>Service Providers</strong> — trusted third parties that process data on our behalf (e.g., Firebase, Paystack).</li>
+      <li><strong>Subscription Plan</strong> — one of the available tiers (Free, Basic, Professional, Business) governing App features and usage limits.</li>
+      <li><strong>You / User</strong> — the individual using TapResit, or the business on whose behalf the App is used.</li>
+    </ul>
+  </section>
+
+  <!-- 2 -->
+  <section id="s2">
+    <h2>2. Information We Collect</h2>
+
+    <h3>2.1 Information You Provide Directly</h3>
+    <ul>
+      <li><strong>Authentication data:</strong> your email address and password if you use email/password sign-in, or your Google account name, email address, and profile photo if you sign in with Google. We never store your Google password.</li>
+      <li><strong>Business profile:</strong> business name, logo image, address, phone number, email, website URL, CAC number, Tax Identification Number (TIN), and bank details — used solely to populate your generated documents.</li>
+      <li><strong>Client data:</strong> names, email addresses, phone numbers, and addresses of clients you add to the App. You are responsible for having appropriate authority to submit any client's personal data.</li>
+      <li><strong>Document content:</strong> line items, quantities, unit prices, notes, VAT/WHT settings, currency (NGN or USD), due dates, and document status.</li>
+      <li><strong>Subscription and billing data:</strong> your subscription tier, billing email, and Paystack transaction references. We do <em>not</em> store full card numbers, CVVs, or bank PINs on our systems.</li>
+    </ul>
+
+    <h3>2.2 Automatically Collected Data</h3>
+    <ul>
+      <li>Device model and operating system version</li>
+      <li>Unique device identifiers</li>
+      <li>IP address (used for approximate country-level geolocation only)</li>
+      <li>In-app events: screens visited, features used, document actions (create, edit, share, delete, mark paid)</li>
+      <li>Crash reports and diagnostic logs (via Firebase Crashlytics)</li>
+      <li>Authentication events: sign-in timestamps and method used</li>
+    </ul>
+
+    <h3>2.3 Data Stored in Cloud Systems</h3>
+    <p>Your account profile, business profile, documents, client list, subscription status, and usage counters are stored in <strong>Firebase Firestore</strong>, scoped strictly to your user account. Firestore security rules are enforced server-side so that no other user can read or write your data.</p>
+
+    <h3>2.4 What We Do NOT Collect</h3>
+    <div class="chips">
+      <span class="chip no">✕ Device contacts</span>
+      <span class="chip no">✕ SMS or call logs</span>
+      <span class="chip no">✕ Microphone</span>
+      <span class="chip no">✕ GPS location</span>
+      <span class="chip no">✕ Social media accounts</span>
+      <span class="chip no">✕ Advertising identifiers (GAID)</span>
+      <span class="chip no">✕ Browsing history</span>
+    </div>
+    <div class="callout callout-green">
+      <strong>Ad-free commitment.</strong> TapResit does not integrate any advertising SDKs and does not sell, rent, or share your data with data brokers or advertisers — ever.
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section id="s3">
+    <h2>3. How We Use Your Information</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Purpose</th><th>Data Used</th><th>Basis</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Authenticating and securing your account</td><td>Email, Google ID, session tokens</td><td>Contract / Legitimate interest</td></tr>
+          <tr><td>Generating and storing your invoices, quotes, and receipts</td><td>Document content, client data, business profile</td><td>Contract</td></tr>
+          <tr><td>Applying Nigerian VAT (7.5%) and WHT calculations</td><td>Line-item prices, tax toggle settings</td><td>Contract</td></tr>
+          <tr><td>Producing branded PDF documents on your device</td><td>Business logo, document data</td><td>Contract</td></tr>
+          <tr><td>Processing subscription payments and enforcing plan limits</td><td>Email, subscription status, Paystack reference</td><td>Contract</td></tr>
+          <tr><td>Creating Paystack invoice payment links (Professional / Business)</td><td>Invoice amount, currency, reference, client email</td><td>Contract</td></tr>
+          <tr><td>Offline caching for use without internet</td><td>Recent documents and business data (on-device)</td><td>Legitimate interest</td></tr>
+          <tr><td>App analytics and product improvement</td><td>Usage events, crash reports</td><td>Legitimate interest</td></tr>
+          <tr><td>Fraud prevention and security</td><td>IP address, device identifiers, auth events</td><td>Legitimate interest</td></tr>
+          <tr><td>Customer support and account communication</td><td>Email, account identifiers</td><td>Contract / Consent</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section id="s4">
+    <h2>4. Payments &amp; Paystack</h2>
+    <p>TapResit uses <strong>Paystack</strong> as its payment processor for subscription billing and optional invoice payment links. The following applies:</p>
+    <ul>
+      <li>Invoice payment links are generated <strong>server-side only</strong> via Firebase Cloud Functions. The Paystack secret key is never embedded in or exposed by the mobile App binary.</li>
+      <li>When a payment is completed, Paystack sends a signed webhook to our server. The server verifies the signature before marking the invoice as "Paid" in Firestore.</li>
+      <li>We do not store full card numbers, CVVs, or bank PINs on our systems. All payment credential handling is managed by Paystack under their own PCI-DSS compliance.</li>
+      <li>For subscription billing disputes or refund requests, contact us at <a href="mailto:rcelabslimited@gmail.com">rcelabslimited@gmail.com</a>.</li>
+      <li>Paystack's own privacy practices are described at <a href="https://Paystack.com/us/privacy-policy" target="_blank" rel="noopener noreferrer">Paystack.com/privacy-policy</a>.</li>
+    </ul>
+  </section>
+
+  <!-- 5 -->
+  <section id="s5">
+    <h2>5. Subscription Plans</h2>
+    <p>TapResit offers the following tiers. Your plan determines which features are available and is enforced both in-app and server-side.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Plan</th><th>Document Limit</th><th>Key Features</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="plan plan-free">Free</span></td>
+            <td>Limited (see App for current limit)</td>
+            <td>"Powered by TapResit" watermark on PDFs; no payment links</td>
+          </tr>
+          <tr>
+            <td><span class="plan plan-basic">Basic</span></td>
+            <td>Higher monthly limit</td>
+            <td>WhatsApp sharing; watermark removed</td>
+          </tr>
+          <tr>
+            <td><span class="plan plan-pro">Professional</span></td>
+            <td>Unlimited</td>
+            <td>All Basic features + Paystack invoice payment links</td>
+          </tr>
+          <tr>
+            <td><span class="plan plan-business">Business</span></td>
+            <td>Unlimited</td>
+            <td>All Professional features + multi-user access + priority support</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Cancelling or downgrading a plan does not delete your existing documents. Your content remains accessible subject to any applicable plan limits.</p>
+  </section>
+
+  <!-- 6 -->
+  <section id="s6">
+    <h2>6. PDF Generation &amp; Sharing</h2>
+    <p>PDFs are generated <strong>entirely on your device</strong> using your document data and business branding. The generated file is stored temporarily in your device's local storage and is <strong>never uploaded to our servers</strong>.</p>
+    <ul>
+      <li>When you share a PDF via WhatsApp, email, or any other app, the file is passed directly to that application from your device. We do not intercept or log shared file contents.</li>
+      <li>Free-tier PDFs include a small "Powered by TapResit" watermark, which is removed on paid plans.</li>
+      <li>You are solely responsible for the accuracy of the business information, client details, and tax figures you include in your documents (including TIN and VAT registration numbers).</li>
+    </ul>
+  </section>
+
+  <!-- 7 -->
+  <section id="s7">
+    <h2>7. Offline Storage &amp; Local Caching</h2>
+    <p>TapResit is built as an <strong>offline-first</strong> application. Recent documents, your business profile, and your client list are cached locally on your device using <strong>Hive</strong> and <strong>shared_preferences</strong>. This local data:</p>
+    <ul>
+      <li>Remains on your device until you clear App data, uninstall the App, or delete your account.</li>
+      <li>Syncs automatically to Firestore when your internet connection is restored.</li>
+      <li>Is protected by Android's standard app sandboxing and is not accessible to other installed apps under normal conditions.</li>
+    </ul>
+    <p>You can clear all locally cached data via <strong>Settings → Account → Clear Local Data</strong> within the App, or by uninstalling TapResit.</p>
+  </section>
+
+  <!-- 8 -->
+  <section id="s8">
+    <h2>8. Third-Party Services</h2>
+    <p>We rely on the following trusted Service Providers to operate TapResit. Each has its own privacy policy:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Service</th><th>Provider</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Firebase Authentication</strong></td><td>Google LLC</td><td>User authentication (email/password &amp; Google Sign-In)</td></tr>
+          <tr><td><strong>Cloud Firestore</strong></td><td>Google LLC</td><td>Cloud database for documents, profiles, and usage data</td></tr>
+          <tr><td><strong>Firebase Cloud Functions</strong></td><td>Google LLC</td><td>Server-side payment link creation and webhook handling</td></tr>
+          <tr><td><strong>Firebase Crashlytics</strong></td><td>Google LLC</td><td>Crash reporting and diagnostics</td></tr>
+          <tr><td><strong>Google Sign-In</strong></td><td>Google LLC</td><td>OAuth 2.0 authentication option</td></tr>
+          <tr><td><strong>Paystack</strong></td><td>Paystack Inc.</td><td>Subscription billing and invoice payment processing</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>We encourage you to review <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a> and <a href="https://Paystack.com/us/privacy-policy" target="_blank" rel="noopener noreferrer">Paystack's Privacy Policy</a> for details on how they handle your data.</p>
+  </section>
+
+  <!-- 9 -->
+  <section id="s9">
+    <h2>9. Data Sharing &amp; Disclosure</h2>
+    <p>We do <strong>not sell your personal data</strong>. We may share data only in these limited circumstances:</p>
+    <ul>
+      <li><strong>Service Providers:</strong> With Google (Firebase) and Paystack to operate core App functionality, under data processing agreements that restrict their use of your data.</li>
+      <li><strong>Legal obligations:</strong> To comply with applicable Nigerian law, court orders, or lawful requests from government or regulatory authorities.</li>
+      <li><strong>Business transfers:</strong> In connection with a merger, acquisition, or sale of assets — we will provide prior notice and give you the opportunity to delete your account before any transfer is completed.</li>
+      <li><strong>With your explicit consent:</strong> For example, when you choose to share a document or payment link with a client via WhatsApp or another channel.</li>
+      <li><strong>Aggregated, anonymized data:</strong> We may publish statistics that cannot be used to identify individual users.</li>
+    </ul>
+  </section>
+
+  <!-- 10 -->
+  <section id="s10">
+    <h2>10. Data Retention</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Data Type</th><th>Retention Period</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Account &amp; profile data</strong></td><td>While account is active; deleted within 14 business days of a verified deletion request</td></tr>
+          <tr><td><strong>Documents (invoices, quotes, receipts)</strong></td><td>While account is active; deleted with account on request</td></tr>
+          <tr><td><strong>Client records</strong></td><td>While account is active; deleted with account on request</td></tr>
+          <tr><td><strong>Usage &amp; analytics data</strong></td><td>Up to 24 months; anonymized or deleted thereafter</td></tr>
+          <tr><td><strong>Payment / transaction references</strong></td><td>Up to 7 years as required by Nigerian financial regulations (FIRS)</td></tr>
+          <tr><td><strong>Crash &amp; diagnostic logs</strong></td><td>Up to 90 days</td></tr>
+          <tr><td><strong>Locally cached data (on-device)</strong></td><td>Until App uninstall, App data clear, or account deletion</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout callout-gray">
+      Transaction references required for statutory VAT or tax compliance (e.g., FIRS records) may be retained in pseudonymized form for the legally required period even after account deletion.
+    </div>
+  </section>
+
+  <!-- 11 -->
+  <section id="s11">
+    <h2>11. Your Rights</h2>
+    <p>You have the following rights regarding your personal data. To exercise any of them, email <a href="mailto:rcelabslimited@gmail.com">rcelabslimited@gmail.com</a> — we will respond within <strong>14 business days</strong>.</p>
+    <ul>
+      <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+      <li><strong>Correction:</strong> Request that inaccurate or incomplete data be corrected.</li>
+      <li><strong>Deletion:</strong> Request permanent deletion of your account and personal data (see Section 15 for the full process).</li>
+      <li><strong>Portability:</strong> Request your data in a machine-readable format (JSON or CSV).</li>
+      <li><strong>Restriction:</strong> Ask us to restrict processing of your data in certain circumstances.</li>
+      <li><strong>Objection:</strong> Object to processing based on legitimate interests where your situation warrants it.</li>
+    </ul>
+  </section>
+
+  <!-- 12 -->
+  <section id="s12">
+    <h2>12. Security</h2>
+    <p>We implement reasonable technical and organizational measures to protect your data, including:</p>
+    <ul>
+      <li><strong>Encryption in transit:</strong> All App-to-server communications use HTTPS/TLS.</li>
+      <li><strong>Per-user data isolation:</strong> Firestore security rules are enforced server-side — no user can read or write another user's data.</li>
+      <li><strong>Secret key protection:</strong> Paystack secret keys are stored exclusively in Firebase Cloud Functions environment variables and are never exposed in the App binary.</li>
+      <li><strong>Webhook signature verification:</strong> Payment callbacks are verified using Paystack's HMAC signature scheme before any data is updated.</li>
+      <li><strong>Secure session management:</strong> Firebase Authentication manages session tokens with industry-standard expiry and refresh practices.</li>
+    </ul>
+    <p>No system is 100% secure. If we become aware of a breach that materially affects your personal data, we will notify you promptly in accordance with applicable law.</p>
+  </section>
+
+  <!-- 13 -->
+  <section id="s13">
+    <h2>13. Children's Privacy</h2>
+    <p>TapResit is a business productivity application intended exclusively for users aged <strong>18 and over</strong>. We do not knowingly collect personal data from anyone under 18. If you believe we have inadvertently collected data from a minor, please contact us at <a href="mailto:rcelabslimited@gmail.com">rcelabslimited@gmail.com</a> and we will delete the relevant data without delay.</p>
+  </section>
+
+  <!-- 14 -->
+  <section id="s14">
+    <h2>14. International Data Transfers</h2>
+    <p>Your data may be processed on servers located outside Nigeria — for example, on Google Cloud infrastructure used by Firebase, or on Paystack's servers. Where such transfers occur, we rely on the service providers' own compliance mechanisms (Standard Contractual Clauses, Adequacy Decisions, or equivalent) to ensure your data receives adequate protection.</p>
+  </section>
+
+  <!-- 15 -->
+  <section id="s15">
+    <h2 id="account-deletion">15. Account &amp; Data Deletion Request</h2>
+    <p>You have the right to request deletion, correction, or export of your TapResit data at any time using either method below.</p>
+
+    <h3>Option A — In-App</h3>
+    <p>Go to <strong>Settings → Account → Delete Account</strong>. This immediately clears local cached data and queues a server-side deletion of your Firestore records.</p>
+
+    <h3>Option B — Email Request</h3>
+    <p>Send an email to <a href="mailto:rcelabslimited@gmail.com">rcelabslimited@gmail.com</a> with the subject line <strong>"Data Request — TapResit"</strong> and include:</p>
+    <ul>
+      <li>The email address associated with your TapResit account</li>
+      <li>Your display name or username</li>
+      <li>Whether your account was created via Google Sign-In or email/password</li>
+      <li>The type of request: <em>Delete</em> / <em>Correct</em> / <em>Export</em></li>
+    </ul>
+
+    <h3>What Happens Next</h3>
+    <ul>
+      <li>We will verify your identity (we may request a confirmation screenshot) to protect against unauthorized requests.</li>
+      <li><strong>Deletion:</strong> We will permanently delete your profile, authentication credentials, business profile, all documents (invoices, quotes, receipts), client records, and subscription data.</li>
+      <li><strong>Correction:</strong> We will update the requested fields where technically feasible.</li>
+      <li><strong>Export:</strong> We will provide a machine-readable copy (JSON or CSV) of the personal data we hold.</li>
+      <li>Requests are typically processed within <strong>7–14 business days</strong>.</li>
+      <li>After deletion you will be unable to sign in with that account or recover any removed data.</li>
+    </ul>
+    <div class="callout callout-gray">
+      Transaction references required for FIRS tax compliance may be retained in pseudonymized form for the legally required period after account deletion.
+    </div>
+  </section>
+
+  <!-- 16 -->
+  <section id="s16">
+    <h2>16. Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will post the revised version here with an updated "Last updated" date. For changes that materially affect your rights or how we use your data, we will provide a prominent in-app notice before the changes take effect. Your continued use of TapResit after such notice constitutes your acceptance of the updated policy.</p>
+  </section>
+
+  <!-- 17 -->
+  <section id="s17">
+    <h2>17. Contact Us</h2>
+    <p>If you have questions, concerns, or requests about this Privacy Policy or your personal data, please reach out. We typically respond within 14 business days.</p>
+    <div class="contact-card">
+      <div class="contact-row">
+        <span class="contact-key">Company</span>
+        <span class="contact-val">RCE Labs Limited</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-key">App</span>
+        <span class="contact-val">TapResit (Android)</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-key">Email</span>
+        <span class="contact-val"><a href="mailto:rcelabslimited@gmail.com">rcelabslimited@gmail.com</a></span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-key">Country</span>
+        <span class="contact-val">Nigeria</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-key">Response time</span>
+        <span class="contact-val">Within 14 business days</span>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-body -->
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-brand">
+    <div class="logo-icon">
+      <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="1.5" width="12" height="17" rx="2" stroke="currentColor" stroke-width="1.7"/>
+        <line x1="6.5" y1="6.5" x2="11.5" y2="6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="6.5" y1="10"  x2="13"   y2="10"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="6.5" y1="13.5" x2="10"  y2="13.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </div>
+    TapResit
+  </div>
+  <p>© 2026 RCE Labs Limited &nbsp;·&nbsp; Lagos, Nigeria</p>
+  <p style="margin-top:4px">Privacy Policy · Last updated April 17, 2026</p>
+</footer>
+
+</body>
+</html>
